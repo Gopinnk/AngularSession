@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <button onclick="addNewValue()">Add New Value</button>
+    <button onclick="addAtLast()">Add Last Value</button>
+    <script>
+    var users = ["A","B","C"];
+    var results = "";
+    /*
+    for(i=0; i<users.length; i++){
+        results = results + users[i] +"<br>";
+        }
+        document.getElementById("demo").innerHTML = results;
+    */
+        // Using Fucntion Call
+
+        function displayValue(){
+            for(i=0; i<users.length; i++){
+        results = results + users[i] +"<br>";
+        }
+        document.getElementById("demo").innerHTML = results;
+        }
+
+        //displayValue();
+
+        function addNewValue(){
+            users.unshift("D");
+            displayValue();
+        }
+
+        function addAtLast(){
+            users.push("Last Value");
+            displayValue();
+        }
+
+    </script>
+
+
+</body>
+</html>
