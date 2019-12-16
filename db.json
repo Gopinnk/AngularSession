@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "fname": "Gopi",
+      "email": "gv00421732@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "fname": "Kumar",
+      "email": "kumar@gamil.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "fname": "Raju",
+      "email": "Raju@gmail.com",
+      "password": "111",
+      "id": 6
+    },
+    {
+      "fname": "John",
+      "email": "John@gmail.com",
+      "password": "John",
+      "id": 8
+    },
+    {
+      "fname": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    }
+  ]
+}

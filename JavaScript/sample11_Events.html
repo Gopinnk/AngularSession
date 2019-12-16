@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function cube(){
+            window.value = document.getElementById("number").value;
+            var result = value*value*value;
+            alert(result);
+        }
+
+        function addition(){
+            var res = value + value;
+            alert(res);
+        }
+    </script>
+
+    <label>Enter The Value:</label>
+    <input type="text" name="number" id="number"/>
+    <input type="button" value="CUBE" onclick="cube()">
+
+    <input type="button" value="ADDITION" onclick="addition()">
+    
+</body>
+</html>

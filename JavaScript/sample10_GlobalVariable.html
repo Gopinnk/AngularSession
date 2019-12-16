@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <style>
+    #button1{
+        background-color: blueviolet;
+        text-decoration: brown;
+    }
+    
+    </style>
+
+</head>
+<body>
+    <script>
+        var a = 10;                 // Global Variable SO  we can access to any fucntion...
+        window.value = 50;          // Declaring global variable 
+
+        function localValueDisplay(){
+            window.value = "Global Variable";
+            var b = 20;             // It is Local variable it can be access to only with in the function. 
+            alert(b);
+            alert(window.a);
+        }
+        
+        function globalValueDisplay(){
+            alert(value);
+            
+        }
+        //valueDisplay();
+
+    </script>
+    
+    <button onclick="localValueDisplay()" id=" button1">Clicke Here To Display Local Value</button>
+    <button onclick="globalValueDisplay()">Clicke Here To Display Global Value</button>
+    
+</body>
+</html>

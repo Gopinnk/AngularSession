@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <table align="center">
+
+    
+    <tr><td><label>FirstName:</label></td>
+    <td><input type="text" id="fname"></td></tr>
+
+    <tr><td><label>Email:</label></td>
+    <td><input type="text" id="email"></td></tr>
+    
+    <tr><td><lable>Password:</lable></td>
+    <td><input type="password" id="password"></td></tr>
+    
+    <br>
+    <tr>
+            <td><button onclick="register()" type="button">Register</button></td>
+             <td><button onclick="getData()" type="button">Get Data</button></td>
+    </tr>
+    
+  </table>
+
+</form>
+<br><br>
+<hr />
+<br>
+
+<table border="2" align="center">
+    <thead>
+        <th>FirstName</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>ID</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </thead>
+<tbody id="myTable"></tbody>
+</table>
+    <script>
+    
+    function register(){
+        var users = {
+            fname : " ",
+            email : " ",
+            password : " "
+        };
+
+        //users.fname = document.getElementById("fname").value;
+        //users.email = document.getElementById("email").value;
+        //users.password = document.getElementById("password").value;
+
+        users.fname = document.getElementsByTagName("input")[0].value;
+        users.email = document.getElementsByTagName("input")[1].value;
+        users.password = document.getElementsByTagName("input")[2].value;
+
+        //console.log(users);
+        document.write("Registerd Users are Below")
+        document.write("<br>" +"Username: " + users.fname + "<br> " +"Emai: "+users.email + "<br> "+ "Password: " +users.password);
+        saveUser(users);
+
+
+    }
+
+    function getData(users){
+
+        var getDataa = new XMLHttpRequest();
+        getDataa.onreadystatechange = function(){
+            if(getDataa.readyState == 4 && getDataa.status == 200){
+                var data = JSON.parse(getDataa.response);
+                display(data);
+
+            }
+        };
+
+        getDataa.open("GET","http://localhost:3000/users");
+        getDataa.send();
+    }
+
+    function saveUser(){
+
+        //console.log(user);
+        var saveData = new XMLHttpRequest();
+        saveData.onreadystatechange = function(){
+            if(saveData.readyState == 4 && saveData.status == 201){
+                console.log(saveData.response);
+            }
+        };
+
+        saveData.open("POST", "http://localhost:3000/users" );
+        saveData.setRequestHeader("Content-type", "application/json")
+        saveData.send(JSON.stringify(users));
+
+
+
+    }
+
+    function display(data){
+        //console.log(data);
+        for(i = 0; i < data.length;  i++){
+            var myTr = document.createElement("tr");
+            for(a in data[i]){
+                var myTd = document.createElement("td");
+                myTd.innerHTML = data[i][a];
+                myTr.appendChild(myTd);
+            }
+
+            // Adding the EDIT Button
+
+            var editTd = document.createElement("td");
+            var editBtn = document.createElement("button");
+            editBtn.setAttribute("onclick", "editUser(" + i + ")");
+            editBtn.innerHTML = "Edit";
+            editTd.appendChild(editBtn);
+            myTr.appendChild(editTd);
+
+            // Adding the Delte Button
+
+            var deleteTd = document.createElement("td");
+            var deleteBtn = document.createElement("button");
+            deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+            deleteBtn.innerHTML = "Delete";
+            deleteTd.appendChild(deleteBtn);
+            myTr.appendChild(deleteTd);
+
+            document.getElementById("myTable").appendChild(myTr);    
+        }
+        
+    }
+
+    </script>
+    
+</body>
+</html>
