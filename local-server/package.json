@@ -1,12 +1,20 @@
 {
   "name": "local-server",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
+=======
+>>>>>>> 7e9bdd2cf146a9dcde87fd45460e4ce167b0b3dd
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
+<<<<<<< HEAD
   "license": "ISC"
+=======
+  "license": "ISC",
+  "description": ""
+>>>>>>> 7e9bdd2cf146a9dcde87fd45460e4ce167b0b3dd
 }

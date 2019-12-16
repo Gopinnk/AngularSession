@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
         <title>Document</title>
 </head>
 <body>
@@ -9,11 +10,20 @@
 
     <script>
     
+=======
+       <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Get Data</button>
+
+    <script>
+>>>>>>> 7e9bdd2cf146a9dcde87fd45460e4ce167b0b3dd
     function getData(){
 
         var getInfo = new XMLHttpRequest();
         getInfo.onreadystatechange = function(){
             if(getInfo.readyState == 4 && getInfo.status == 200){
+<<<<<<< HEAD
                 console.log(getInfo.response);
             }
         };
@@ -24,5 +34,16 @@
     
     </script>
 
+=======
+                //console.log(getInfo.response);
+                document.write(getInfo.response);
+            }
+        };
+    getInfo.open("GET", "https://jsonplaceholder.typicode.com/users");
+    getInfo.send();
+    }
+
+    </script>
+>>>>>>> 7e9bdd2cf146a9dcde87fd45460e4ce167b0b3dd
 </body>
 </html>

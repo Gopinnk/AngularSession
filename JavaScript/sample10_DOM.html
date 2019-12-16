@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Document</title>
+</head>
+<body>
+    
+<h1 id = "h1"> Welcome DOM Session</h1>
+<button onclick="changeText()">changeText</button>
+
+<script>
+    function changeText(){
+        document.getElementById("h1").innerHTML = "Text changed";
+
+        var headingText = document.getElementById("h1").innerHTML;
+        console.log(headingText);
+    }
+</script>
+
+</body>
+</html>
