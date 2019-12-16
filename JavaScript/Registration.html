@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form>
+<lable>FirstName:</lable>
+<input type="text" id="fname"><br>
+<label>Email:</label>
+<input type="text" id="email`"><br>
+<label>Password:</label>
+<input type="password" id="password"><br>
+
+<button onclick="registerUser()" type="button">Register</button>
+
+</form>
+
+<script>
+    function registerUser(){
+        var user = {
+            fname:"",
+            email:"",
+            password:""
+        };
+
+        user.fname = document.getElementById("fname").value;
+        user.email = document.getElementById("email").value;
+        user.password = document.getElementById("password").value;
+
+        
+       console.log(user);
+       
+        
+    }
+</script>
+
+</body>
+</html>
